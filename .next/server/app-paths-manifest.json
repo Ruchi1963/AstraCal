@@ -1,0 +1,4 @@
+{
+  "/api/events/query/route": "app/api/events/query/route.js",
+  "/page": "app/page.js"
+}

@@ -1,0 +1,27 @@
+// prisma/schema.prisma
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Event {
+  id          String    @id @default(cuid())
+  title       String
+  description String?
+  location    String?
+  color       String?   @default("#2C82F6")
+  allDay      Boolean   @default(false)
+  startUTC    DateTime
+  endUTC      DateTime
+  timezone    String?   @default("UTC")
+  rrule       String?
+  exdatesUTC  String?   @default("[]") // store JSON string
+  seriesId    String?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}

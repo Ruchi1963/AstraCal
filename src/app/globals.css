@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: light; }
+body { @apply bg-mist text-ink; }
+:root {
+  --hour-height: 64px;
+  --gutter-width: 56px;
+}
